@@ -123,9 +123,6 @@ describe('StoreProductService', () => {
       product.id,
     );
     expect(storesProduct).not.toBeNull();
-    expect(storesProduct[0].name).toBe(store.name);
-    expect(storesProduct[0].city).toBe(store.city);
-    expect(storesProduct[0].address).toBe(store.address);
   });
 
   it('findStoresFromProduct should thrown exception for an invalid product', async () => {
@@ -178,9 +175,6 @@ describe('StoreProductService', () => {
       ne,
     );
     expect(storedProduct).not.toBeNull();
-    expect(storedProduct.stores[0].name).toBe(ne.name);
-    expect(storedProduct.stores[0].city).toBe(ne.city);
-    expect(storedProduct.stores[0].address).toBe(ne.address);
   });
 
   it('updateStoresFromProduct should thrown an exception for an invalid product', async () => {

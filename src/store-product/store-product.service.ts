@@ -34,6 +34,7 @@ export class StoreProductService {
 
     const product: ProductEntity = await this.productRepository.findOne({
       where: { id: productId },
+      relations: ['stores'],
     });
     if (!product)
       throw new BusinessLogicException(
@@ -65,6 +66,7 @@ export class StoreProductService {
   ): Promise<StoreEntity> {
     const product: ProductEntity = await this.productRepository.findOne({
       where: { id: productId },
+      relations: ['stores'],
     });
     if (!product)
       throw new BusinessLogicException(
