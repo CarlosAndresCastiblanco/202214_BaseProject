@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "5e87d934-0b74-4305-bbd8-fcb07ab44b2d",
+		"name": "Producto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23005239"
+	},
+	"item": [
+		{
+			"name": "Crear un producto válido",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Pan\",\r\n    \"price\" : 100,\r\n    \"type\" : \"perecedero\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear un producto válido",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Pan\",\r\n    \"price\" : 100,\r\n    \"type\" : \"perecedero\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products"
+							]
+						}
+					},
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"id\": \"7ed18e73-8b8c-404b-a962-d41290121343\",\n    \"name\": \"Pan\",\n    \"price\": 100,\n    \"type\": \"perecedero\",\n    \"stores\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear un producto inválido",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Pan\",\r\n    \"price\" : 100,\r\n    \"type\" : \"mal tipo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear un producto inválido",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Pan\",\r\n    \"price\" : 100,\r\n    \"type\" : \"mal tipo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 400,\r\n    \"message\": \"The request are bad\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener todos los productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener todos los productos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"id\": \"7ed18e73-8b8c-404b-a962-d41290121343\",\r\n        \"name\": \"Pan\",\r\n        \"price\": 100,\r\n        \"type\": \"perecedero\",\r\n        \"stores\": []\r\n    },\r\n    {\r\n        \"id\": \"7ed18e73-8b8c-404b-a962-d41290121344\",\r\n        \"name\": \"Galletas\",\r\n        \"price\": 50,\r\n        \"type\": \"perecedero\",\r\n        \"stores\": []\r\n    },\r\n    {\r\n        \"id\": \"7ed18e73-8b8c-404b-a962-d41290121345\",\r\n        \"name\": \"Leche\",\r\n        \"price\": 20,\r\n        \"type\": \"perecedero\",\r\n        \"stores\": []\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener un producto por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"7ed18e73-8b8c-404b-a962-d41290121343"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un producto por ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"7ed18e73-8b8c-404b-a962-d41290121343"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"7ed18e73-8b8c-404b-a962-d41290121343\",\r\n    \"name\": \"Pan\",\r\n    \"price\": 100,\r\n    \"type\": \"perecedero\",\r\n    \"stores\": []\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un producto por un ID que no existe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/00000-00000-00000-00000-00000",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"00000-00000-00000-00000-00000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un producto por un ID que no existe",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/00000-00000-00000-00000-00000",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"00000-00000-00000-00000-00000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The product with the given id was not found\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar un producto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Pan\",\r\n    \"price\" : 100,\r\n    \"type\" : \"no perecedero\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"7ed18e73-8b8c-404b-a962-d41290121343"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar un producto",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Pan\",\r\n    \"price\" : 100,\r\n    \"type\" : \"no perecedero\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"7ed18e73-8b8c-404b-a962-d41290121343"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"7ed18e73-8b8c-404b-a962-d41290121343\",\r\n    \"name\": \"Pan\",\r\n    \"price\": 100,\r\n    \"type\": \"no perecedero\",\r\n    \"stores\": []\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar un producto con un ID que no existe",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Pan\",\r\n    \"price\" : 100,\r\n    \"type\" : \"no perecedero\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/00000-00000-00000-00000-00000",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"00000-00000-00000-00000-00000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar un producto con un ID que no existe",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Pan\",\r\n    \"price\" : 100,\r\n    \"type\" : \"no perecedero\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/00000-00000-00000-00000-00000",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"00000-00000-00000-00000-00000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The product with the given id was not found\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar un producto por su ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"7ed18e73-8b8c-404b-a962-d41290121343"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un producto por su ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"7ed18e73-8b8c-404b-a962-d41290121343"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Eliminar un producto con un ID que no existe",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/00000-00000-00000-00000-00000",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"00000-00000-00000-00000-00000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un producto con un ID que no existe",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/00000-00000-00000-00000-00000",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"00000-00000-00000-00000-00000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The product with the given id was not found\"\r\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "scheme",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"key": "authority",
+			"value": "localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "prefix_v1",
+			"value": "api/v1",
+			"type": "string"
+		}
+	]
+}

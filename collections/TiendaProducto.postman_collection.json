@@ -1,0 +1,525 @@
+{
+	"info": {
+		"_postman_id": "303dddc8-28ac-4898-b6ca-6bc4518f555c",
+		"name": "TiendaProducto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23005239"
+	},
+	"item": [
+		{
+			"name": "Agregar una nueva tienda a las oferentes de un producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343/stores/7ed18e73-8b8c-404b-a962-d41290121343",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"7ed18e73-8b8c-404b-a962-d41290121343",
+						"stores",
+						"7ed18e73-8b8c-404b-a962-d41290121343"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar una nueva tienda a las oferentes de un producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343/stores/7ed18e73-8b8c-404b-a962-d41290121343",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"7ed18e73-8b8c-404b-a962-d41290121343",
+								"stores",
+								"7ed18e73-8b8c-404b-a962-d41290121343"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"7ed18e73-8b8c-404b-a962-d41290121343\",\r\n    \"name\": \"Pan\",\r\n    \"price\": 100,\r\n    \"type\": \"perecedero\",\r\n    \"stores\": [\r\n        {\r\n            \"id\": \"7ed18e73-8b8c-404b-a962-d41290121343\",\r\n            \"name\" : \"Central\",\r\n            \"city\" : \"ARM\",\r\n            \"address\" : \"Cra 6 # 5 - 16\",\r\n            \"products\" : []\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Asociar una tienda que no existe a las oferentes de un producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343/stores/00000-00000-00000-00000-00000",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"7ed18e73-8b8c-404b-a962-d41290121343",
+						"stores",
+						"00000-00000-00000-00000-00000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Asociar una tienda que no existe a las oferentes de un producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343/stores/00000-00000-00000-00000-00000",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"7ed18e73-8b8c-404b-a962-d41290121343",
+								"stores",
+								"00000-00000-00000-00000-00000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The store with the given id was not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener todas las tiendas que ofrecen un producto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343/stores",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"7ed18e73-8b8c-404b-a962-d41290121343",
+						"stores"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener todas las tiendas que ofrecen un producto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343/stores",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"7ed18e73-8b8c-404b-a962-d41290121343",
+								"stores"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"id\": \"7ed18e73-8b8c-404b-a962-d41290121343\",\r\n        \"name\" : \"Central\",\r\n        \"city\" : \"ARM\",\r\n        \"address\" : \"Cra 6 # 5 - 16\",\r\n        \"products\" : []\r\n    },\r\n    {\r\n        \"id\": \"7ed18e73-8b8c-404b-a962-d41290121344\",\r\n        \"name\" : \"Norte\",\r\n        \"city\" : \"BOG\",\r\n        \"address\" : \"Calle 15 # 12 - 53\",\r\n        \"products\" : []\r\n    },\r\n    {\r\n        \"id\": \"7ed18e73-8b8c-404b-a962-d41290121345\",\r\n        \"name\" : \"Sur\",\r\n        \"city\" : \"CAL\",\r\n        \"address\" : \"Avenida 1 Mayo 15 - 56\",\r\n        \"products\" : []\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener una tienda que ofrece un producto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343/stores/7ed18e73-8b8c-404b-a962-d41290121343",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"7ed18e73-8b8c-404b-a962-d41290121343",
+						"stores",
+						"7ed18e73-8b8c-404b-a962-d41290121343"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una tienda que ofrece un producto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343/stores/7ed18e73-8b8c-404b-a962-d41290121343",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"7ed18e73-8b8c-404b-a962-d41290121343",
+								"stores",
+								"7ed18e73-8b8c-404b-a962-d41290121343"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"7ed18e73-8b8c-404b-a962-d41290121343\",\r\n    \"name\" : \"Central\",\r\n    \"city\" : \"ARM\",\r\n    \"address\" : \"Cra 6 # 5 - 16\",\r\n    \"products\" : []\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener una tienda que ofrece un producto que no existe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/00000-00000-00000-00000-00000/stores",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"00000-00000-00000-00000-00000",
+						"stores"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una tienda que ofrece un producto que no existe",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/00000-00000-00000-00000-00000/stores",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"00000-00000-00000-00000-00000",
+								"stores"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The product with the given id was not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar las tiendas que ofrecen un producto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Central\",\r\n    \"city\" : \"BOG\",\r\n    \"address\" : \"Cra 6 # 5 - 16\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343/stores",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"7ed18e73-8b8c-404b-a962-d41290121343",
+						"stores"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar las tiendas que ofrecen un producto",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Central\",\r\n    \"city\" : \"BOG\",\r\n    \"address\" : \"Cra 6 # 5 - 16\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343/stores",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"7ed18e73-8b8c-404b-a962-d41290121343",
+								"stores"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": \"7ed18e73-8b8c-404b-a962-d41290121343\",\r\n    \"name\": \"Pan\",\r\n    \"price\": 100,\r\n    \"type\": \"perecedero\",\r\n    \"stores\": [\r\n        {\r\n            \"id\": \"7ed18e73-8b8c-404b-a962-d41290121343\",\r\n            \"name\" : \"Central\",\r\n            \"city\" : \"BOG\",\r\n            \"address\" : \"Cra 6 # 5 - 16\",\r\n            \"products\" : []\r\n        },\r\n        {\r\n            \"id\": \"7ed18e73-8b8c-404b-a962-d41290121344\",\r\n            \"name\" : \"Central\",\r\n            \"city\" : \"BOG\",\r\n            \"address\" : \"Cra 6 # 5 - 16\",\r\n            \"products\" : []\r\n        },\r\n        {\r\n            \"id\": \"7ed18e73-8b8c-404b-a962-d41290121345\",\r\n            \"name\" : \"Central\",\r\n            \"city\" : \"BOG\",\r\n            \"address\" : \"Cra 6 # 5 - 16\",\r\n            \"products\" : []\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar las tiendas que ofrecen un producto, con una tienda inexistente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Central\",\r\n    \"city\" : \"BOG\",\r\n    \"address\" : \"Cra 6 # 5 - 16\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/00000-00000-00000-00000-00000/stores",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"00000-00000-00000-00000-00000",
+						"stores"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar las tiendas que ofrecen un producto, con una tienda inexistente",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Central\",\r\n    \"city\" : \"BOG\",\r\n    \"address\" : \"Cra 6 # 5 - 16\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/00000-00000-00000-00000-00000/stores",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"00000-00000-00000-00000-00000",
+								"stores"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The store with the given id was not found\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar una tienda que ofrece un producto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343/stores/7ed18e73-8b8c-404b-a962-d41290121343",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"7ed18e73-8b8c-404b-a962-d41290121343",
+						"stores",
+						"7ed18e73-8b8c-404b-a962-d41290121343"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una tienda que ofrece un producto",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/7ed18e73-8b8c-404b-a962-d41290121343/stores/7ed18e73-8b8c-404b-a962-d41290121343",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"7ed18e73-8b8c-404b-a962-d41290121343",
+								"stores",
+								"7ed18e73-8b8c-404b-a962-d41290121343"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar una tienda que no ofrece un producto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/00000-00000-00000-00000-00000/stores/7ed18e73-8b8c-404b-a962-d41290121343",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{authority}}"
+					],
+					"path": [
+						"{{prefix_v1}}",
+						"products",
+						"00000-00000-00000-00000-00000",
+						"stores",
+						"7ed18e73-8b8c-404b-a962-d41290121343"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una tienda que no ofrece un producto",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{scheme}}://{{authority}}/{{prefix_v1}}/products/00000-00000-00000-00000-00000/stores/7ed18e73-8b8c-404b-a962-d41290121343",
+							"protocol": "{{scheme}}",
+							"host": [
+								"{{authority}}"
+							],
+							"path": [
+								"{{prefix_v1}}",
+								"products",
+								"00000-00000-00000-00000-00000",
+								"stores",
+								"7ed18e73-8b8c-404b-a962-d41290121343"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The product with the given id was not found\"\r\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "scheme",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"key": "authority",
+			"value": "localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "prefix_v1",
+			"value": "api/v1",
+			"type": "string"
+		}
+	]
+}
